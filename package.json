@@ -4,6 +4,7 @@
   "description": "backend from profile page app",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "dev": "nodemon index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
