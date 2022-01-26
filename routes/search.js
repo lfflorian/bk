@@ -13,9 +13,16 @@ function searchApi(app) {
             var text = req.query.text
             var proficient = req.query.proficient
             var data = await service.searchPeopleByProficiency(text, proficient)
-            res.status(201).json(data)
+
+            if (data.results.length > 0) {
+                res.status(201).json(data)
+            } else
+            {
+                res.status(404).json(data)
+            }
         } catch (err) {
             console.log(err)
+            res.status(500).json(data)
         }
     })
 }
